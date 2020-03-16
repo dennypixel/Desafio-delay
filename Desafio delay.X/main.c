@@ -9,6 +9,7 @@
 #include "config.h"
 #include "delay.h"
 #include "leds.h"
+#include "chave.h"
 
 int main(void) 
 {
@@ -16,11 +17,16 @@ int main(void)
     
     while(1)
     {
-        ligarLED();
-        delay(2000);
-        desligarLED();
-        delay(1000);
+        if( lerCH() == 1 )
+        {
+            ligarLED();
+            delay(15000);
+        }
         
-    }
-         
+        else
+        {
+        desligarLED();
+        }
+    }   
+       
 }

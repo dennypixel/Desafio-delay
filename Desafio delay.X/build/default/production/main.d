@@ -1,1 +1,1 @@
-build/default/production\main.p1: main.c config.h delay.h leds.h
+build/default/production\main.p1: main.c config.h delay.h leds.h chave.h

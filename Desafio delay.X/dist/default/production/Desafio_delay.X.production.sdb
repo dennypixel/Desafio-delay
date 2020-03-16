@@ -11,6 +11,8 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"16 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
+[v _lerCH lerCH `(uc  1 e 1 0 ]
 "12 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
 "12 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
@@ -19,9 +21,9 @@
 [v _ligarLED ligarLED `(v  1 e 1 0 ]
 "22
 [v _desligarLED desligarLED `(v  1 e 1 0 ]
-"13 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+"14 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
 [v _main main `(i  1 e 2 0 ]
-[s S52 . 1 `uc 1 RD0 1 0 :1:0 
+[s S56 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -31,9 +33,9 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "369 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[u S61 . 1 `S52 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES61  1 e 1 @8 ]
-[s S73 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S65 . 1 `S56 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES65  1 e 1 @8 ]
+[s S77 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -43,19 +45,24 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S82 . 1 `S73 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES82  1 e 1 @136 ]
-"13 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+[u S86 . 1 `S77 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES86  1 e 1 @136 ]
+"14 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"26
+"32
 } 0
 "17 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
 [v _ligarLED ligarLED `(v  1 e 1 0 ]
 {
 "20
 } 0
-"12
+"16 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
+[v _lerCH lerCH `(uc  1 e 1 0 ]
+{
+"19
+} 0
+"12 C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
 [v _initLED initLED `(v  1 e 1 0 ]
 {
 "16

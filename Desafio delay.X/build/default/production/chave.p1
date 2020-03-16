@@ -1,20 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"4 ./leds.h
-[; ;./leds.h: 4: void initLED( void );
-[v _initLED `(v ~T0 @X0 0 ef ]
-"5 ./chave.h
-[; ;./chave.h: 5: unsigned char lerCH( void );
-[v _lerCH `(uc ~T0 @X0 0 ef ]
-"5 ./leds.h
-[; ;./leds.h: 5: void ligarLED( void );
-[v _ligarLED `(v ~T0 @X0 0 ef ]
-"4 ./delay.h
-[; ;./delay.h: 4: void delay(unsigned int t);
-[v _delay `(v ~T0 @X0 0 ef1`ui ]
-"6 ./leds.h
-[; ;./leds.h: 6: void desligarLED( void );
-[v _desligarLED `(v ~T0 @X0 0 ef ]
+"1608 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1608:     struct {
+[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S59 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+"1607
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1607: typedef union {
+[u S58 `S59 1 ]
+[n S58 . . ]
+"1619
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 1619: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x088)));
+[v _TRISDbits `VS58 ~T0 @X0 0 e@136 ]
+"358
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 358:     struct {
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"357
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 357: typedef union {
+[u S11 `S12 1 ]
+[n S11 . . ]
+"369
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
+[v _PORTDbits `VS11 ~T0 @X0 0 e@8 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -249,68 +255,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"4 ./config.h
-[p x FOSC = INTRC_NOCLKOUT ]
-"5
-[p x WDTE = OFF ]
-"6
-[p x MCLRE = OFF ]
-"7
-[p x LVP = OFF ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
-"15
-[; ;main.c: 15: {
+"11 chave.c
+[; ;chave.c: 11: void initCH( void )
+[v _initCH `(v ~T0 @X0 1 ef ]
+"12
+[; ;chave.c: 12: {
 {
-[e :U _main ]
+[e :U _initCH ]
 [f ]
-"16
-[; ;main.c: 16:     initLED();
-[e ( _initLED ..  ]
-"18
-[; ;main.c: 18:     while(1)
-[e :U 140 ]
-"19
-[; ;main.c: 19:     {
-{
-"20
-[; ;main.c: 20:         if( lerCH() == 1 )
-[e $ ! == -> ( _lerCH ..  `i -> 1 `i 142  ]
-"21
-[; ;main.c: 21:         {
-{
-"22
-[; ;main.c: 22:             ligarLED();
-[e ( _ligarLED ..  ]
-"23
-[; ;main.c: 23:             delay(15000);
-[e ( _delay (1 -> -> 15000 `i `ui ]
-"24
-[; ;main.c: 24:         }
-}
-[e $U 143  ]
-"26
-[; ;main.c: 26:         else
-[e :U 142 ]
-"27
-[; ;main.c: 27:         {
-{
-"28
-[; ;main.c: 28:         desligarLED();
-[e ( _desligarLED ..  ]
-"29
-[; ;main.c: 29:         }
-}
-[e :U 143 ]
-"30
-[; ;main.c: 30:     }
-}
-[e :U 139 ]
-[e $U 140  ]
-[e :U 141 ]
-"32
-[; ;main.c: 32: }
+"13
+[; ;chave.c: 13:     TRISDbits.TRISD7 = 1;
+[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
+"14
+[; ;chave.c: 14: }
 [e :UE 138 ]
+}
+"16
+[; ;chave.c: 16: unsigned char lerCH( void )
+[v _lerCH `(uc ~T0 @X0 1 ef ]
+"17
+[; ;chave.c: 17: {
+{
+[e :U _lerCH ]
+[f ]
+"18
+[; ;chave.c: 18:     return( PORTDbits.RD7 );
+[e ) . . _PORTDbits 0 7 ]
+[e $UE 139  ]
+"19
+[; ;chave.c: 19: }
+[e :UE 139 ]
 }

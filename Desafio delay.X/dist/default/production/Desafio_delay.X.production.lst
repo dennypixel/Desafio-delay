@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V2.00 build -1524193055 
-                                                                                               Mon Mar 16 09:00:27 2020
+                                                                                               Mon Mar 16 09:50:53 2020
 
 Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 20180527130849
      1  0000                     
@@ -770,562 +770,812 @@ Microchip Technology Omniscient Code Generator v2.00 (Free mode) build 201805271
    708                           EECON1 equ 018Ch ;# 
    709  018C                     # 3546 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
    710                           EECON2 equ 018Dh ;# 
-   711  018D                     	FNCALL	_main,_delay
-   712                           	FNCALL	_main,_desligarLED
-   713                           	FNCALL	_main,_initLED
-   714                           	FNCALL	_main,_ligarLED
-   715                           	FNROOT	_main
-   716                           	global	_PORTDbits
-   717                           _PORTDbits	set	0x8
-   718  0008                     	global	_TRISDbits
-   719                           _TRISDbits	set	0x88
-   720  0088                     ; #config settings
-   721                           global __CFG_FOSC$INTRC_NOCLKOUT
-   722                           __CFG_FOSC$INTRC_NOCLKOUT equ 0x0
-   723  0000                     global __CFG_WDTE$OFF
-   724                           __CFG_WDTE$OFF equ 0x0
-   725  0000                     global __CFG_MCLRE$OFF
-   726                           __CFG_MCLRE$OFF equ 0x0
-   727  0000                     global __CFG_LVP$OFF
-   728                           __CFG_LVP$OFF equ 0x0
-   729  0000                     	file	"C:\Users\19180037\AppData\Local\Temp\s3ac."
-   730                           	line	#
-   731                           psect cinit,class=CODE,delta=2
-   732                           global start_initialization
-   733                           start_initialization:
-   734  07FC                     
-   735                           global __initialization
-   736                           __initialization:
-   737  07FC                     psect cinit,class=CODE,delta=2,merge=1
-   738                           global end_of_initialization,__end_of__initialization
-   739                           
-   740                           ;End of C runtime variable initialization code
-   741                           
-   742                           end_of_initialization:
-   743  07FC                     __end_of__initialization:
-   744  07FC                     clrf status
-   745  07FC  0183               ljmp _main	;jump to C main() function
-   746  07FD  120A  118A  2FD6   psect	cstackCOMMON,class=COMMON,space=1,noexec
-   747                           global __pcstackCOMMON
-   748                           __pcstackCOMMON:
-   749  0070                     ?_initLED:	; 1 bytes @ 0x0
-   750  0070                     ??_initLED:	; 1 bytes @ 0x0
-   751  0070                     ?_ligarLED:	; 1 bytes @ 0x0
-   752  0070                     ??_ligarLED:	; 1 bytes @ 0x0
-   753  0070                     ?_delay:	; 1 bytes @ 0x0
-   754  0070                     ?_desligarLED:	; 1 bytes @ 0x0
-   755  0070                     ??_desligarLED:	; 1 bytes @ 0x0
-   756  0070                     ?_main:	; 2 bytes @ 0x0
-   757  0070                     	global	delay@t
-   758                           delay@t:	; 2 bytes @ 0x0
-   759  0070                     	ds	2
-   760  0070                     ??_delay:	; 1 bytes @ 0x2
-   761  0072                     	ds	1
-   762  0072                     ??_main:	; 1 bytes @ 0x3
-   763  0073                     ;!
-   764                           ;!Data Sizes:
-   765                           ;!    Strings     0
-   766                           ;!    Constant    0
-   767                           ;!    Data        0
-   768                           ;!    BSS         0
-   769                           ;!    Persistent  0
-   770                           ;!    Stack       0
-   771                           ;!
-   772                           ;!Auto Spaces:
-   773                           ;!    Space          Size  Autos    Used
-   774                           ;!    COMMON           14      3       3
-   775                           ;!    BANK0            80      0       0
-   776                           ;!    BANK1            80      0       0
-   777                           ;!    BANK3            96      0       0
-   778                           ;!    BANK2            96      0       0
-   779                           
-   780                           ;!
-   781                           ;!Pointer List with Targets:
-   782                           ;!
-   783                           ;!    None.
-   784                           
-   785                           
-   786                           ;!
-   787                           ;!Critical Paths under _main in COMMON
-   788                           ;!
-   789                           ;!    _main->_delay
-   790                           ;!
-   791                           ;!Critical Paths under _main in BANK0
-   792                           ;!
-   793                           ;!    None.
-   794                           ;!
-   795                           ;!Critical Paths under _main in BANK1
-   796                           ;!
-   797                           ;!    None.
-   798                           ;!
-   799                           ;!Critical Paths under _main in BANK3
-   800                           ;!
-   801                           ;!    None.
-   802                           ;!
-   803                           ;!Critical Paths under _main in BANK2
-   804                           ;!
-   805                           ;!    None.
-   806                           
-   807 ;;
-   808 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   809 ;;
-   810                           
-   811                           ;!
-   812                           ;!Call Graph Tables:
-   813                           ;!
-   814                           ;! ---------------------------------------------------------------------------------
-   815                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
-   816                           ;! ---------------------------------------------------------------------------------
-   817                           ;! (0) _main                                                 0     0      0     175
-   818                           ;!                              _delay
-   819                           ;!                        _desligarLED
-   820                           ;!                            _initLED
-   821                           ;!                           _ligarLED
-   822                           ;! ---------------------------------------------------------------------------------
-   823                           ;! (1) _ligarLED                                             0     0      0       0
-   824                           ;! ---------------------------------------------------------------------------------
-   825                           ;! (1) _initLED                                              0     0      0       0
-   826                           ;! ---------------------------------------------------------------------------------
-   827                           ;! (1) _desligarLED                                          0     0      0       0
-   828                           ;! ---------------------------------------------------------------------------------
-   829                           ;! (1) _delay                                                3     1      2     175
-   830                           ;!                                              0 COMMON     3     1      2
-   831                           ;! ---------------------------------------------------------------------------------
-   832                           ;! Estimated maximum stack depth 1
-   833                           ;! ---------------------------------------------------------------------------------
-   834                           ;!
-   835                           ;! Call Graph Graphs:
-   836                           ;!
-   837                           ;! _main (ROOT)
-   838                           ;!   _delay
-   839                           ;!   _desligarLED
-   840                           ;!   _initLED
-   841                           ;!   _ligarLED
-   842                           ;!
-   843                           
-   844                           ;! Address spaces:
-   845                           
-   846                           ;!Name               Size   Autos  Total    Cost      Usage
-   847                           ;!BITCOMMON            E      0       0       0        0.0%
-   848                           ;!EEDATA             100      0       0       0        0.0%
-   849                           ;!NULL                 0      0       0       0        0.0%
-   850                           ;!CODE                 0      0       0       0        0.0%
-   851                           ;!COMMON               E      3       3       1       21.4%
-   852                           ;!BITSFR0              0      0       0       1        0.0%
-   853                           ;!SFR0                 0      0       0       1        0.0%
-   854                           ;!BITSFR1              0      0       0       2        0.0%
-   855                           ;!SFR1                 0      0       0       2        0.0%
-   856                           ;!STACK                0      0       0       2        0.0%
-   857                           ;!ABS                  0      0       0       3        0.0%
-   858                           ;!BITBANK0            50      0       0       4        0.0%
-   859                           ;!BITSFR3              0      0       0       4        0.0%
-   860                           ;!SFR3                 0      0       0       4        0.0%
-   861                           ;!BANK0               50      0       0       5        0.0%
-   862                           ;!BITSFR2              0      0       0       5        0.0%
-   863                           ;!SFR2                 0      0       0       5        0.0%
-   864                           ;!BITBANK1            50      0       0       6        0.0%
-   865                           ;!BANK1               50      0       0       7        0.0%
-   866                           ;!BITBANK3            60      0       0       8        0.0%
-   867                           ;!BANK3               60      0       0       9        0.0%
-   868                           ;!BITBANK2            60      0       0      10        0.0%
-   869                           ;!BANK2               60      0       0      11        0.0%
-   870                           ;!DATA                 0      0       0      12        0.0%
-   871                           
-   872                           	global	_main
-   873                           
-   874 ;; *************** function _main *****************
-   875 ;; Defined at:
-   876 ;;		line 13 in file "main.c"
-   877 ;; Parameters:    Size  Location     Type
-   878 ;;		None
-   879 ;; Auto vars:     Size  Location     Type
-   880 ;;		None
-   881 ;; Return value:  Size  Location     Type
-   882 ;;                  2   12[None  ] int 
-   883 ;; Registers used:
-   884 ;;		wreg, status,2, status,0, pclath, cstack
-   885 ;; Tracked objects:
-   886 ;;		On entry : B00/0
-   887 ;;		On exit  : 0/0
-   888 ;;		Unchanged: 0/0
-   889 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   890 ;;      Params:         0       0       0       0       0
-   891 ;;      Locals:         0       0       0       0       0
-   892 ;;      Temps:          0       0       0       0       0
-   893 ;;      Totals:         0       0       0       0       0
-   894 ;;Total ram usage:        0 bytes
-   895 ;; Hardware stack levels required when called:    1
-   896 ;; This function calls:
-   897 ;;		_delay
-   898 ;;		_desligarLED
-   899 ;;		_initLED
-   900 ;;		_ligarLED
-   901 ;; This function is called by:
-   902 ;;		Startup code after reset
-   903 ;; This function uses a non-reentrant model
-   904 ;;
-   905                           psect	maintext,global,class=CODE,delta=2,split=1,group=0
-   906                           	file	"main.c"
-   907                           	line	13
-   908                           global __pmaintext
-   909                           __pmaintext:	;psect for function _main
-   910  07D6                     psect	maintext
-   911                           	file	"main.c"
-   912                           	line	13
-   913                           	global	__size_of_main
-   914                           	__size_of_main	equ	__end_of_main-_main
-   915  0026                     	
-   916                           _main:	
-   917  07D6                     ;incstack = 0
-   918                           	opt	stack 7
-   919                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   920                           	line	15
-   921                           	
-   922                           l641:	
-   923  07D6                     ;main.c: 15:     initLED();
-   924                           	fcall	_initLED
-   925  07D6  120A  118A  27B8  120A  118A  	line	17
-   926                           ;main.c: 17:     while(1)
-   927                           	
-   928                           l13:	
-   929  07DB                     	line	19
-   930                           ;main.c: 18:     {;main.c: 19:         ligarLED();
-   931                           	fcall	_ligarLED
-   932  07DB  120A  118A  27B4  120A  118A  	line	20
-   933                           	
-   934                           l643:	
-   935  07E0                     ;main.c: 20:         delay(2000);
-   936                           	movlw	0D0h
-   937  07E0  30D0               	movwf	(delay@t)
-   938  07E1  00F0               	movlw	07h
-   939  07E2  3007               	movwf	((delay@t))+1
-   940  07E3  00F1               	fcall	_delay
-   941  07E4  120A  118A  27BF  120A  118A  	line	21
-   942                           	
-   943                           l645:	
-   944  07E9                     ;main.c: 21:         desligarLED();
-   945                           	fcall	_desligarLED
-   946  07E9  120A  118A  27B0  120A  118A  	line	22
-   947                           ;main.c: 22:         delay(1000);
-   948                           	movlw	0E8h
-   949  07EE  30E8               	movwf	(delay@t)
-   950  07EF  00F0               	movlw	03h
-   951  07F0  3003               	movwf	((delay@t))+1
-   952  07F1  00F1               	fcall	_delay
-   953  07F2  120A  118A  27BF  120A  118A  	goto	l13
-   954  07F7  2FDB               	line	24
-   955                           ;main.c: 24:     }
-   956                           	
-   957                           l14:	
-   958  07F8                     	goto	l13
-   959  07F8  2FDB               	
-   960                           l15:	
-   961  07F9                     	line	26
-   962                           	
-   963                           l16:	
-   964  07F9                     	global	start
-   965                           	ljmp	start
-   966  07F9  120A  118A  2800   	opt stack 0
-   967                           GLOBAL	__end_of_main
-   968                           	__end_of_main:
-   969  07FC                     	signat	_main,90
-   970                           	global	_ligarLED
-   971                           
-   972 ;; *************** function _ligarLED *****************
-   973 ;; Defined at:
-   974 ;;		line 17 in file "leds.c"
-   975 ;; Parameters:    Size  Location     Type
-   976 ;;		None
-   977 ;; Auto vars:     Size  Location     Type
-   978 ;;		None
-   979 ;; Return value:  Size  Location     Type
-   980 ;;                  1    wreg      void 
-   981 ;; Registers used:
-   982 ;;		None
-   983 ;; Tracked objects:
-   984 ;;		On entry : 0/0
-   985 ;;		On exit  : 0/0
-   986 ;;		Unchanged: 0/0
-   987 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   988 ;;      Params:         0       0       0       0       0
-   989 ;;      Locals:         0       0       0       0       0
-   990 ;;      Temps:          0       0       0       0       0
-   991 ;;      Totals:         0       0       0       0       0
-   992 ;;Total ram usage:        0 bytes
-   993 ;; Hardware stack levels used:    1
-   994 ;; This function calls:
-   995 ;;		Nothing
-   996 ;; This function is called by:
-   997 ;;		_main
-   998 ;; This function uses a non-reentrant model
-   999 ;;
-  1000                           psect	text1,local,class=CODE,delta=2,merge=1,group=0
-  1001                           	file	"leds.c"
-  1002                           	line	17
-  1003                           global __ptext1
-  1004                           __ptext1:	;psect for function _ligarLED
-  1005  07B4                     psect	text1
-  1006                           	file	"leds.c"
-  1007                           	line	17
-  1008                           	global	__size_of_ligarLED
-  1009                           	__size_of_ligarLED	equ	__end_of_ligarLED-_ligarLED
-  1010  0004                     	
-  1011                           _ligarLED:	
-  1012  07B4                     ;incstack = 0
-  1013                           	opt	stack 7
-  1014                           ; Regs used in _ligarLED: []
-  1015                           	line	19
-  1016                           	
-  1017                           l615:	
-  1018  07B4                     ;leds.c: 19:     PORTDbits.RD6 = 1;
-  1019                           	bcf	status, 5	;RP0=0, select bank0
-  1020  07B4  1283               	bcf	status, 6	;RP1=0, select bank0
-  1021  07B5  1303               	bsf	(8),6	;volatile
-  1022  07B6  1708               	line	20
-  1023                           	
-  1024                           l34:	
-  1025  07B7                     	return
-  1026  07B7  0008               	opt stack 0
-  1027                           GLOBAL	__end_of_ligarLED
-  1028                           	__end_of_ligarLED:
-  1029  07B8                     	signat	_ligarLED,89
-  1030                           	global	_initLED
-  1031                           
-  1032 ;; *************** function _initLED *****************
-  1033 ;; Defined at:
-  1034 ;;		line 12 in file "leds.c"
-  1035 ;; Parameters:    Size  Location     Type
-  1036 ;;		None
-  1037 ;; Auto vars:     Size  Location     Type
-  1038 ;;		None
-  1039 ;; Return value:  Size  Location     Type
-  1040 ;;                  1    wreg      void 
-  1041 ;; Registers used:
-  1042 ;;		None
-  1043 ;; Tracked objects:
-  1044 ;;		On entry : 0/0
-  1045 ;;		On exit  : 0/0
-  1046 ;;		Unchanged: 0/0
-  1047 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1048 ;;      Params:         0       0       0       0       0
-  1049 ;;      Locals:         0       0       0       0       0
-  1050 ;;      Temps:          0       0       0       0       0
-  1051 ;;      Totals:         0       0       0       0       0
-  1052 ;;Total ram usage:        0 bytes
-  1053 ;; Hardware stack levels used:    1
-  1054 ;; This function calls:
-  1055 ;;		Nothing
-  1056 ;; This function is called by:
-  1057 ;;		_main
-  1058 ;; This function uses a non-reentrant model
-  1059 ;;
-  1060                           psect	text2,local,class=CODE,delta=2,merge=1,group=0
-  1061                           	line	12
-  1062                           global __ptext2
-  1063                           __ptext2:	;psect for function _initLED
-  1064  07B8                     psect	text2
-  1065                           	file	"leds.c"
-  1066                           	line	12
-  1067                           	global	__size_of_initLED
-  1068                           	__size_of_initLED	equ	__end_of_initLED-_initLED
-  1069  0007                     	
-  1070                           _initLED:	
-  1071  07B8                     ;incstack = 0
-  1072                           	opt	stack 7
-  1073                           ; Regs used in _initLED: []
-  1074                           	line	14
-  1075                           	
-  1076                           l613:	
-  1077  07B8                     ;leds.c: 14:     PORTDbits.RD6 = 0;
-  1078                           	bcf	status, 5	;RP0=0, select bank0
-  1079  07B8  1283               	bcf	status, 6	;RP1=0, select bank0
-  1080  07B9  1303               	bcf	(8),6	;volatile
-  1081  07BA  1308               	line	15
-  1082                           ;leds.c: 15:     TRISDbits.TRISD6 = 0;
-  1083                           	bsf	status, 5	;RP0=1, select bank1
-  1084  07BB  1683               	bcf	status, 6	;RP1=0, select bank1
-  1085  07BC  1303               	bcf	(136)^080h,6	;volatile
-  1086  07BD  1308               	line	16
-  1087                           	
-  1088                           l31:	
-  1089  07BE                     	return
-  1090  07BE  0008               	opt stack 0
-  1091                           GLOBAL	__end_of_initLED
-  1092                           	__end_of_initLED:
-  1093  07BF                     	signat	_initLED,89
-  1094                           	global	_desligarLED
-  1095                           
-  1096 ;; *************** function _desligarLED *****************
-  1097 ;; Defined at:
-  1098 ;;		line 22 in file "leds.c"
-  1099 ;; Parameters:    Size  Location     Type
-  1100 ;;		None
-  1101 ;; Auto vars:     Size  Location     Type
-  1102 ;;		None
-  1103 ;; Return value:  Size  Location     Type
-  1104 ;;                  1    wreg      void 
-  1105 ;; Registers used:
-  1106 ;;		None
-  1107 ;; Tracked objects:
-  1108 ;;		On entry : 0/0
-  1109 ;;		On exit  : 0/0
-  1110 ;;		Unchanged: 0/0
-  1111 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1112 ;;      Params:         0       0       0       0       0
-  1113 ;;      Locals:         0       0       0       0       0
-  1114 ;;      Temps:          0       0       0       0       0
-  1115 ;;      Totals:         0       0       0       0       0
-  1116 ;;Total ram usage:        0 bytes
-  1117 ;; Hardware stack levels used:    1
-  1118 ;; This function calls:
-  1119 ;;		Nothing
-  1120 ;; This function is called by:
-  1121 ;;		_main
-  1122 ;; This function uses a non-reentrant model
-  1123 ;;
-  1124                           psect	text3,local,class=CODE,delta=2,merge=1,group=0
-  1125                           	line	22
-  1126                           global __ptext3
-  1127                           __ptext3:	;psect for function _desligarLED
-  1128  07B0                     psect	text3
-  1129                           	file	"leds.c"
-  1130                           	line	22
-  1131                           	global	__size_of_desligarLED
-  1132                           	__size_of_desligarLED	equ	__end_of_desligarLED-_desligarLED
-  1133  0004                     	
-  1134                           _desligarLED:	
-  1135  07B0                     ;incstack = 0
-  1136                           	opt	stack 7
-  1137                           ; Regs used in _desligarLED: []
-  1138                           	line	24
-  1139                           	
-  1140                           l623:	
-  1141  07B0                     ;leds.c: 24:     PORTDbits.RD6 = 0;
-  1142                           	bcf	status, 5	;RP0=0, select bank0
-  1143  07B0  1283               	bcf	status, 6	;RP1=0, select bank0
-  1144  07B1  1303               	bcf	(8),6	;volatile
-  1145  07B2  1308               	line	25
+   711  018D                     # 54 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   712                           INDF equ 00h ;# 
+   713  0000                     # 61 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   714                           TMR0 equ 01h ;# 
+   715  0001                     # 68 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   716                           PCL equ 02h ;# 
+   717  0002                     # 75 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   718                           STATUS equ 03h ;# 
+   719  0003                     # 161 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   720                           FSR equ 04h ;# 
+   721  0004                     # 168 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   722                           PORTA equ 05h ;# 
+   723  0005                     # 230 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   724                           PORTB equ 06h ;# 
+   725  0006                     # 292 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   726                           PORTC equ 07h ;# 
+   727  0007                     # 354 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   728                           PORTD equ 08h ;# 
+   729  0008                     # 416 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   730                           PORTE equ 09h ;# 
+   731  0009                     # 454 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   732                           PCLATH equ 0Ah ;# 
+   733  000A                     # 461 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   734                           INTCON equ 0Bh ;# 
+   735  000B                     # 539 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   736                           PIR1 equ 0Ch ;# 
+   737  000C                     # 595 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   738                           PIR2 equ 0Dh ;# 
+   739  000D                     # 652 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   740                           TMR1 equ 0Eh ;# 
+   741  000E                     # 659 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   742                           TMR1L equ 0Eh ;# 
+   743  000E                     # 666 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   744                           TMR1H equ 0Fh ;# 
+   745  000F                     # 673 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   746                           T1CON equ 010h ;# 
+   747  0010                     # 767 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   748                           TMR2 equ 011h ;# 
+   749  0011                     # 774 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   750                           T2CON equ 012h ;# 
+   751  0012                     # 845 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   752                           SSPBUF equ 013h ;# 
+   753  0013                     # 852 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   754                           SSPCON equ 014h ;# 
+   755  0014                     # 922 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   756                           CCPR1 equ 015h ;# 
+   757  0015                     # 929 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   758                           CCPR1L equ 015h ;# 
+   759  0015                     # 936 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   760                           CCPR1H equ 016h ;# 
+   761  0016                     # 943 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   762                           CCP1CON equ 017h ;# 
+   763  0017                     # 1040 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   764                           RCSTA equ 018h ;# 
+   765  0018                     # 1135 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   766                           TXREG equ 019h ;# 
+   767  0019                     # 1142 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   768                           RCREG equ 01Ah ;# 
+   769  001A                     # 1149 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   770                           CCPR2 equ 01Bh ;# 
+   771  001B                     # 1156 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   772                           CCPR2L equ 01Bh ;# 
+   773  001B                     # 1163 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   774                           CCPR2H equ 01Ch ;# 
+   775  001C                     # 1170 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   776                           CCP2CON equ 01Dh ;# 
+   777  001D                     # 1240 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   778                           ADRESH equ 01Eh ;# 
+   779  001E                     # 1247 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   780                           ADCON0 equ 01Fh ;# 
+   781  001F                     # 1348 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   782                           OPTION_REG equ 081h ;# 
+   783  0081                     # 1418 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   784                           TRISA equ 085h ;# 
+   785  0085                     # 1480 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   786                           TRISB equ 086h ;# 
+   787  0086                     # 1542 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   788                           TRISC equ 087h ;# 
+   789  0087                     # 1604 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   790                           TRISD equ 088h ;# 
+   791  0088                     # 1666 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   792                           TRISE equ 089h ;# 
+   793  0089                     # 1704 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   794                           PIE1 equ 08Ch ;# 
+   795  008C                     # 1760 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   796                           PIE2 equ 08Dh ;# 
+   797  008D                     # 1817 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   798                           PCON equ 08Eh ;# 
+   799  008E                     # 1864 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   800                           OSCCON equ 08Fh ;# 
+   801  008F                     # 1929 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   802                           OSCTUNE equ 090h ;# 
+   803  0090                     # 1981 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   804                           SSPCON2 equ 091h ;# 
+   805  0091                     # 2043 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   806                           PR2 equ 092h ;# 
+   807  0092                     # 2050 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   808                           SSPADD equ 093h ;# 
+   809  0093                     # 2057 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   810                           SSPMSK equ 093h ;# 
+   811  0093                     # 2062 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   812                           MSK equ 093h ;# 
+   813  0093                     # 2179 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   814                           SSPSTAT equ 094h ;# 
+   815  0094                     # 2348 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   816                           WPUB equ 095h ;# 
+   817  0095                     # 2418 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   818                           IOCB equ 096h ;# 
+   819  0096                     # 2488 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   820                           VRCON equ 097h ;# 
+   821  0097                     # 2558 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   822                           TXSTA equ 098h ;# 
+   823  0098                     # 2644 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   824                           SPBRG equ 099h ;# 
+   825  0099                     # 2706 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   826                           SPBRGH equ 09Ah ;# 
+   827  009A                     # 2776 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   828                           PWM1CON equ 09Bh ;# 
+   829  009B                     # 2846 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   830                           ECCPAS equ 09Ch ;# 
+   831  009C                     # 2928 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   832                           PSTRCON equ 09Dh ;# 
+   833  009D                     # 2972 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   834                           ADRESL equ 09Eh ;# 
+   835  009E                     # 2979 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   836                           ADCON1 equ 09Fh ;# 
+   837  009F                     # 3013 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   838                           WDTCON equ 0105h ;# 
+   839  0105                     # 3066 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   840                           CM1CON0 equ 0107h ;# 
+   841  0107                     # 3131 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   842                           CM2CON0 equ 0108h ;# 
+   843  0108                     # 3196 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   844                           CM2CON1 equ 0109h ;# 
+   845  0109                     # 3247 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   846                           EEDATA equ 010Ch ;# 
+   847  010C                     # 3252 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   848                           EEDAT equ 010Ch ;# 
+   849  010C                     # 3259 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   850                           EEADR equ 010Dh ;# 
+   851  010D                     # 3266 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   852                           EEDATH equ 010Eh ;# 
+   853  010E                     # 3273 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   854                           EEADRH equ 010Fh ;# 
+   855  010F                     # 3280 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   856                           SRCON equ 0185h ;# 
+   857  0185                     # 3337 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   858                           BAUDCTL equ 0187h ;# 
+   859  0187                     # 3389 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   860                           ANSEL equ 0188h ;# 
+   861  0188                     # 3451 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   862                           ANSELH equ 0189h ;# 
+   863  0189                     # 3501 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   864                           EECON1 equ 018Ch ;# 
+   865  018C                     # 3546 "C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h"
+   866                           EECON2 equ 018Dh ;# 
+   867  018D                     	FNCALL	_main,_delay
+   868                           	FNCALL	_main,_desligarLED
+   869                           	FNCALL	_main,_initLED
+   870                           	FNCALL	_main,_lerCH
+   871                           	FNCALL	_main,_ligarLED
+   872                           	FNROOT	_main
+   873                           	global	_PORTDbits
+   874                           _PORTDbits	set	0x8
+   875  0008                     	global	_TRISDbits
+   876                           _TRISDbits	set	0x88
+   877  0088                     ; #config settings
+   878                           global __CFG_FOSC$INTRC_NOCLKOUT
+   879                           __CFG_FOSC$INTRC_NOCLKOUT equ 0x0
+   880  0000                     global __CFG_WDTE$OFF
+   881                           __CFG_WDTE$OFF equ 0x0
+   882  0000                     global __CFG_MCLRE$OFF
+   883                           __CFG_MCLRE$OFF equ 0x0
+   884  0000                     global __CFG_LVP$OFF
+   885                           __CFG_LVP$OFF equ 0x0
+   886  0000                     	file	"C:\Users\19180037\AppData\Local\Temp\s44s."
+   887                           	line	#
+   888                           psect cinit,class=CODE,delta=2
+   889                           global start_initialization
+   890                           start_initialization:
+   891  07FC                     
+   892                           global __initialization
+   893                           __initialization:
+   894  07FC                     psect cinit,class=CODE,delta=2,merge=1
+   895                           global end_of_initialization,__end_of__initialization
+   896                           
+   897                           ;End of C runtime variable initialization code
+   898                           
+   899                           end_of_initialization:
+   900  07FC                     __end_of__initialization:
+   901  07FC                     clrf status
+   902  07FC  0183               ljmp _main	;jump to C main() function
+   903  07FD  120A  118A  2FD2   psect	cstackCOMMON,class=COMMON,space=1,noexec
+   904                           global __pcstackCOMMON
+   905                           __pcstackCOMMON:
+   906  0070                     ?_initLED:	; 1 bytes @ 0x0
+   907  0070                     ??_initLED:	; 1 bytes @ 0x0
+   908  0070                     ?_lerCH:	; 1 bytes @ 0x0
+   909  0070                     ??_lerCH:	; 1 bytes @ 0x0
+   910  0070                     ?_ligarLED:	; 1 bytes @ 0x0
+   911  0070                     ??_ligarLED:	; 1 bytes @ 0x0
+   912  0070                     ?_delay:	; 1 bytes @ 0x0
+   913  0070                     ?_desligarLED:	; 1 bytes @ 0x0
+   914  0070                     ??_desligarLED:	; 1 bytes @ 0x0
+   915  0070                     ?_main:	; 2 bytes @ 0x0
+   916  0070                     	global	delay@t
+   917                           delay@t:	; 2 bytes @ 0x0
+   918  0070                     	ds	2
+   919  0070                     ??_delay:	; 1 bytes @ 0x2
+   920  0072                     	ds	1
+   921  0072                     ??_main:	; 1 bytes @ 0x3
+   922  0073                     ;!
+   923                           ;!Data Sizes:
+   924                           ;!    Strings     0
+   925                           ;!    Constant    0
+   926                           ;!    Data        0
+   927                           ;!    BSS         0
+   928                           ;!    Persistent  0
+   929                           ;!    Stack       0
+   930                           ;!
+   931                           ;!Auto Spaces:
+   932                           ;!    Space          Size  Autos    Used
+   933                           ;!    COMMON           14      3       3
+   934                           ;!    BANK0            80      0       0
+   935                           ;!    BANK1            80      0       0
+   936                           ;!    BANK3            96      0       0
+   937                           ;!    BANK2            96      0       0
+   938                           
+   939                           ;!
+   940                           ;!Pointer List with Targets:
+   941                           ;!
+   942                           ;!    None.
+   943                           
+   944                           
+   945                           ;!
+   946                           ;!Critical Paths under _main in COMMON
+   947                           ;!
+   948                           ;!    _main->_delay
+   949                           ;!
+   950                           ;!Critical Paths under _main in BANK0
+   951                           ;!
+   952                           ;!    None.
+   953                           ;!
+   954                           ;!Critical Paths under _main in BANK1
+   955                           ;!
+   956                           ;!    None.
+   957                           ;!
+   958                           ;!Critical Paths under _main in BANK3
+   959                           ;!
+   960                           ;!    None.
+   961                           ;!
+   962                           ;!Critical Paths under _main in BANK2
+   963                           ;!
+   964                           ;!    None.
+   965                           
+   966 ;;
+   967 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   968 ;;
+   969                           
+   970                           ;!
+   971                           ;!Call Graph Tables:
+   972                           ;!
+   973                           ;! ---------------------------------------------------------------------------------
+   974                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   975                           ;! ---------------------------------------------------------------------------------
+   976                           ;! (0) _main                                                 0     0      0      99
+   977                           ;!                              _delay
+   978                           ;!                        _desligarLED
+   979                           ;!                            _initLED
+   980                           ;!                              _lerCH
+   981                           ;!                           _ligarLED
+   982                           ;! ---------------------------------------------------------------------------------
+   983                           ;! (1) _ligarLED                                             0     0      0       0
+   984                           ;! ---------------------------------------------------------------------------------
+   985                           ;! (1) _lerCH                                                0     0      0       0
+   986                           ;! ---------------------------------------------------------------------------------
+   987                           ;! (1) _initLED                                              0     0      0       0
+   988                           ;! ---------------------------------------------------------------------------------
+   989                           ;! (1) _desligarLED                                          0     0      0       0
+   990                           ;! ---------------------------------------------------------------------------------
+   991                           ;! (1) _delay                                                3     1      2      99
+   992                           ;!                                              0 COMMON     3     1      2
+   993                           ;! ---------------------------------------------------------------------------------
+   994                           ;! Estimated maximum stack depth 1
+   995                           ;! ---------------------------------------------------------------------------------
+   996                           ;!
+   997                           ;! Call Graph Graphs:
+   998                           ;!
+   999                           ;! _main (ROOT)
+  1000                           ;!   _delay
+  1001                           ;!   _desligarLED
+  1002                           ;!   _initLED
+  1003                           ;!   _lerCH
+  1004                           ;!   _ligarLED
+  1005                           ;!
+  1006                           
+  1007                           ;! Address spaces:
+  1008                           
+  1009                           ;!Name               Size   Autos  Total    Cost      Usage
+  1010                           ;!BITCOMMON            E      0       0       0        0.0%
+  1011                           ;!EEDATA             100      0       0       0        0.0%
+  1012                           ;!NULL                 0      0       0       0        0.0%
+  1013                           ;!CODE                 0      0       0       0        0.0%
+  1014                           ;!COMMON               E      3       3       1       21.4%
+  1015                           ;!BITSFR0              0      0       0       1        0.0%
+  1016                           ;!SFR0                 0      0       0       1        0.0%
+  1017                           ;!BITSFR1              0      0       0       2        0.0%
+  1018                           ;!SFR1                 0      0       0       2        0.0%
+  1019                           ;!STACK                0      0       0       2        0.0%
+  1020                           ;!ABS                  0      0       0       3        0.0%
+  1021                           ;!BITBANK0            50      0       0       4        0.0%
+  1022                           ;!BITSFR3              0      0       0       4        0.0%
+  1023                           ;!SFR3                 0      0       0       4        0.0%
+  1024                           ;!BANK0               50      0       0       5        0.0%
+  1025                           ;!BITSFR2              0      0       0       5        0.0%
+  1026                           ;!SFR2                 0      0       0       5        0.0%
+  1027                           ;!BITBANK1            50      0       0       6        0.0%
+  1028                           ;!BANK1               50      0       0       7        0.0%
+  1029                           ;!BITBANK3            60      0       0       8        0.0%
+  1030                           ;!BANK3               60      0       0       9        0.0%
+  1031                           ;!BITBANK2            60      0       0      10        0.0%
+  1032                           ;!BANK2               60      0       0      11        0.0%
+  1033                           ;!DATA                 0      0       0      12        0.0%
+  1034                           
+  1035                           	global	_main
+  1036                           
+  1037 ;; *************** function _main *****************
+  1038 ;; Defined at:
+  1039 ;;		line 14 in file "main.c"
+  1040 ;; Parameters:    Size  Location     Type
+  1041 ;;		None
+  1042 ;; Auto vars:     Size  Location     Type
+  1043 ;;		None
+  1044 ;; Return value:  Size  Location     Type
+  1045 ;;                  2   14[None  ] int 
+  1046 ;; Registers used:
+  1047 ;;		wreg, status,2, status,0, pclath, cstack
+  1048 ;; Tracked objects:
+  1049 ;;		On entry : B00/0
+  1050 ;;		On exit  : 0/0
+  1051 ;;		Unchanged: 0/0
+  1052 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1053 ;;      Params:         0       0       0       0       0
+  1054 ;;      Locals:         0       0       0       0       0
+  1055 ;;      Temps:          0       0       0       0       0
+  1056 ;;      Totals:         0       0       0       0       0
+  1057 ;;Total ram usage:        0 bytes
+  1058 ;; Hardware stack levels required when called:    1
+  1059 ;; This function calls:
+  1060 ;;		_delay
+  1061 ;;		_desligarLED
+  1062 ;;		_initLED
+  1063 ;;		_lerCH
+  1064 ;;		_ligarLED
+  1065 ;; This function is called by:
+  1066 ;;		Startup code after reset
+  1067 ;; This function uses a non-reentrant model
+  1068 ;;
+  1069                           psect	maintext,global,class=CODE,delta=2,split=1,group=0
+  1070                           	file	"main.c"
+  1071                           	line	14
+  1072                           global __pmaintext
+  1073                           __pmaintext:	;psect for function _main
+  1074  07D2                     psect	maintext
+  1075                           	file	"main.c"
+  1076                           	line	14
+  1077                           	global	__size_of_main
+  1078                           	__size_of_main	equ	__end_of_main-_main
+  1079  002A                     	
+  1080                           _main:	
+  1081  07D2                     ;incstack = 0
+  1082                           	opt	stack 7
+  1083                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+  1084                           	line	16
+  1085                           	
+  1086                           l665:	
+  1087  07D2                     ;main.c: 16:     initLED();
+  1088                           	fcall	_initLED
+  1089  07D2  120A  118A  27AD  120A  118A  	goto	l667
+  1090  07D7  2FD8               	line	18
+  1091                           ;main.c: 18:     while(1)
+  1092                           	
+  1093                           l15:	
+  1094  07D8                     	line	20
+  1095                           	
+  1096                           l667:	
+  1097  07D8                     ;main.c: 19:     {;main.c: 20:         if( lerCH() == 1 )
+  1098                           	fcall	_lerCH
+  1099  07D8  120A  118A  27B4  120A  118A  	xorlw	01h
+  1100  07DD  3A01               	skipz
+  1101  07DE  1D03               	goto	u41
+  1102  07DF  2FE1               	goto	u40
+  1103  07E0  2FE2               u41:
+  1104  07E1                     	goto	l673
+  1105  07E1  2FF1               u40:
+  1106  07E2                     	line	22
+  1107                           	
+  1108                           l669:	
+  1109  07E2                     ;main.c: 21:         {;main.c: 22:             ligarLED();
+  1110                           	fcall	_ligarLED
+  1111  07E2  120A  118A  27A9  120A  118A  	line	23
+  1112                           	
+  1113                           l671:	
+  1114  07E7                     ;main.c: 23:             delay(15000);
+  1115                           	movlw	098h
+  1116  07E7  3098               	movwf	(delay@t)
+  1117  07E8  00F0               	movlw	03Ah
+  1118  07E9  303A               	movwf	((delay@t))+1
+  1119  07EA  00F1               	fcall	_delay
+  1120  07EB  120A  118A  27BB  120A  118A  	line	24
+  1121                           ;main.c: 24:         }
+  1122                           	goto	l667
+  1123  07F0  2FD8               	line	26
+  1124                           ;main.c: 26:         else
+  1125                           	
+  1126                           l16:	
+  1127  07F1                     	line	28
+  1128                           	
+  1129                           l673:	
+  1130  07F1                     ;main.c: 27:         {;main.c: 28:         desligarLED();
+  1131                           	fcall	_desligarLED
+  1132  07F1  120A  118A  27A5  120A  118A  	goto	l667
+  1133  07F6  2FD8               	line	29
+  1134                           ;main.c: 29:         }
+  1135                           	
+  1136                           l17:	
+  1137  07F7                     	goto	l667
+  1138  07F7  2FD8               	line	30
+  1139                           ;main.c: 30:     }
+  1140                           	
+  1141                           l18:	
+  1142  07F8                     	goto	l667
+  1143  07F8  2FD8               	
+  1144                           l19:	
+  1145  07F9                     	line	32
   1146                           	
-  1147                           l37:	
-  1148  07B3                     	return
-  1149  07B3  0008               	opt stack 0
-  1150                           GLOBAL	__end_of_desligarLED
-  1151                           	__end_of_desligarLED:
-  1152  07B4                     	signat	_desligarLED,89
-  1153                           	global	_delay
-  1154                           
-  1155 ;; *************** function _delay *****************
-  1156 ;; Defined at:
-  1157 ;;		line 12 in file "delay.c"
-  1158 ;; Parameters:    Size  Location     Type
-  1159 ;;  t               2    0[COMMON] unsigned int 
-  1160 ;; Auto vars:     Size  Location     Type
-  1161 ;;		None
-  1162 ;; Return value:  Size  Location     Type
-  1163 ;;                  1    wreg      void 
-  1164 ;; Registers used:
-  1165 ;;		wreg, status,2, status,0
-  1166 ;; Tracked objects:
-  1167 ;;		On entry : 0/0
-  1168 ;;		On exit  : 0/0
-  1169 ;;		Unchanged: 0/0
-  1170 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1171 ;;      Params:         2       0       0       0       0
-  1172 ;;      Locals:         0       0       0       0       0
-  1173 ;;      Temps:          1       0       0       0       0
-  1174 ;;      Totals:         3       0       0       0       0
-  1175 ;;Total ram usage:        3 bytes
-  1176 ;; Hardware stack levels used:    1
-  1177 ;; This function calls:
-  1178 ;;		Nothing
-  1179 ;; This function is called by:
-  1180 ;;		_main
-  1181 ;; This function uses a non-reentrant model
-  1182 ;;
-  1183                           psect	text4,local,class=CODE,delta=2,merge=1,group=0
-  1184                           	file	"delay.c"
-  1185                           	line	12
-  1186                           global __ptext4
-  1187                           __ptext4:	;psect for function _delay
-  1188  07BF                     psect	text4
-  1189                           	file	"delay.c"
-  1190                           	line	12
-  1191                           	global	__size_of_delay
-  1192                           	__size_of_delay	equ	__end_of_delay-_delay
-  1193  0017                     	
-  1194                           _delay:	
-  1195  07BF                     ;incstack = 0
-  1196                           	opt	stack 7
-  1197                           ; Regs used in _delay: [wreg+status,2+status,0]
-  1198                           	line	14
-  1199                           	
-  1200                           l635:	
-  1201  07BF                     ;delay.c: 12: void delay(unsigned int t);delay.c: 13: {;delay.c: 14:     while( t!=0 )
-  1202                           	goto	l639
-  1203  07BF  2FCE               	
-  1204                           l22:	
-  1205  07C0                     	line	16
-  1206                           	
-  1207                           l637:	
-  1208  07C0                     ;delay.c: 15:     {;delay.c: 16:         _delay((unsigned long)((1)*(4000000/4000.0)));
+  1147                           l20:	
+  1148  07F9                     	global	start
+  1149                           	ljmp	start
+  1150  07F9  120A  118A  2800   	opt stack 0
+  1151                           GLOBAL	__end_of_main
+  1152                           	__end_of_main:
+  1153  07FC                     	signat	_main,90
+  1154                           	global	_ligarLED
+  1155                           
+  1156 ;; *************** function _ligarLED *****************
+  1157 ;; Defined at:
+  1158 ;;		line 17 in file "leds.c"
+  1159 ;; Parameters:    Size  Location     Type
+  1160 ;;		None
+  1161 ;; Auto vars:     Size  Location     Type
+  1162 ;;		None
+  1163 ;; Return value:  Size  Location     Type
+  1164 ;;                  1    wreg      void 
+  1165 ;; Registers used:
+  1166 ;;		None
+  1167 ;; Tracked objects:
+  1168 ;;		On entry : 0/0
+  1169 ;;		On exit  : 0/0
+  1170 ;;		Unchanged: 0/0
+  1171 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1172 ;;      Params:         0       0       0       0       0
+  1173 ;;      Locals:         0       0       0       0       0
+  1174 ;;      Temps:          0       0       0       0       0
+  1175 ;;      Totals:         0       0       0       0       0
+  1176 ;;Total ram usage:        0 bytes
+  1177 ;; Hardware stack levels used:    1
+  1178 ;; This function calls:
+  1179 ;;		Nothing
+  1180 ;; This function is called by:
+  1181 ;;		_main
+  1182 ;; This function uses a non-reentrant model
+  1183 ;;
+  1184                           psect	text1,local,class=CODE,delta=2,merge=1,group=0
+  1185                           	file	"leds.c"
+  1186                           	line	17
+  1187                           global __ptext1
+  1188                           __ptext1:	;psect for function _ligarLED
+  1189  07A9                     psect	text1
+  1190                           	file	"leds.c"
+  1191                           	line	17
+  1192                           	global	__size_of_ligarLED
+  1193                           	__size_of_ligarLED	equ	__end_of_ligarLED-_ligarLED
+  1194  0004                     	
+  1195                           _ligarLED:	
+  1196  07A9                     ;incstack = 0
+  1197                           	opt	stack 7
+  1198                           ; Regs used in _ligarLED: []
+  1199                           	line	19
+  1200                           	
+  1201                           l633:	
+  1202  07A9                     ;leds.c: 19:     PORTDbits.RD6 = 1;
+  1203                           	bcf	status, 5	;RP0=0, select bank0
+  1204  07A9  1283               	bcf	status, 6	;RP1=0, select bank0
+  1205  07AA  1303               	bsf	(8),6	;volatile
+  1206  07AB  1708               	line	20
+  1207                           	
+  1208                           l38:	
+  1209  07AC                     	return
+  1210  07AC  0008               	opt stack 0
+  1211                           GLOBAL	__end_of_ligarLED
+  1212                           	__end_of_ligarLED:
+  1213  07AD                     	signat	_ligarLED,89
+  1214                           	global	_lerCH
+  1215                           
+  1216 ;; *************** function _lerCH *****************
+  1217 ;; Defined at:
+  1218 ;;		line 16 in file "chave.c"
+  1219 ;; Parameters:    Size  Location     Type
+  1220 ;;		None
+  1221 ;; Auto vars:     Size  Location     Type
+  1222 ;;		None
+  1223 ;; Return value:  Size  Location     Type
+  1224 ;;                  1    wreg      unsigned char 
+  1225 ;; Registers used:
+  1226 ;;		wreg, status,2, status,0
+  1227 ;; Tracked objects:
+  1228 ;;		On entry : 0/0
+  1229 ;;		On exit  : 0/0
+  1230 ;;		Unchanged: 0/0
+  1231 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1232 ;;      Params:         0       0       0       0       0
+  1233 ;;      Locals:         0       0       0       0       0
+  1234 ;;      Temps:          0       0       0       0       0
+  1235 ;;      Totals:         0       0       0       0       0
+  1236 ;;Total ram usage:        0 bytes
+  1237 ;; Hardware stack levels used:    1
+  1238 ;; This function calls:
+  1239 ;;		Nothing
+  1240 ;; This function is called by:
+  1241 ;;		_main
+  1242 ;; This function uses a non-reentrant model
+  1243 ;;
+  1244                           psect	text2,local,class=CODE,delta=2,merge=1,group=0
+  1245                           	file	"chave.c"
+  1246                           	line	16
+  1247                           global __ptext2
+  1248                           __ptext2:	;psect for function _lerCH
+  1249  07B4                     psect	text2
+  1250                           	file	"chave.c"
+  1251                           	line	16
+  1252                           	global	__size_of_lerCH
+  1253                           	__size_of_lerCH	equ	__end_of_lerCH-_lerCH
+  1254  0007                     	
+  1255                           _lerCH:	
+  1256  07B4                     ;incstack = 0
+  1257                           	opt	stack 7
+  1258                           ; Regs used in _lerCH: [wreg+status,2+status,0]
+  1259                           	line	18
+  1260                           	
+  1261                           l629:	
+  1262  07B4                     ;chave.c: 18:     return( PORTDbits.RD7 );
+  1263                           	bcf	status, 5	;RP0=0, select bank0
+  1264  07B4  1283               	bcf	status, 6	;RP1=0, select bank0
+  1265  07B5  1303               	rlf	(8),w	;volatile
+  1266  07B6  0D08               	rlf	(8),w	;volatile
+  1267  07B7  0D08               	andlw	1
+  1268  07B8  3901               	goto	l54
+  1269  07B9  2FBA               	
+  1270                           l631:	
+  1271  07BA                     	line	19
+  1272                           	
+  1273                           l54:	
+  1274  07BA                     	return
+  1275  07BA  0008               	opt stack 0
+  1276                           GLOBAL	__end_of_lerCH
+  1277                           	__end_of_lerCH:
+  1278  07BB                     	signat	_lerCH,89
+  1279                           	global	_initLED
+  1280                           
+  1281 ;; *************** function _initLED *****************
+  1282 ;; Defined at:
+  1283 ;;		line 12 in file "leds.c"
+  1284 ;; Parameters:    Size  Location     Type
+  1285 ;;		None
+  1286 ;; Auto vars:     Size  Location     Type
+  1287 ;;		None
+  1288 ;; Return value:  Size  Location     Type
+  1289 ;;                  1    wreg      void 
+  1290 ;; Registers used:
+  1291 ;;		None
+  1292 ;; Tracked objects:
+  1293 ;;		On entry : 0/0
+  1294 ;;		On exit  : 0/0
+  1295 ;;		Unchanged: 0/0
+  1296 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1297 ;;      Params:         0       0       0       0       0
+  1298 ;;      Locals:         0       0       0       0       0
+  1299 ;;      Temps:          0       0       0       0       0
+  1300 ;;      Totals:         0       0       0       0       0
+  1301 ;;Total ram usage:        0 bytes
+  1302 ;; Hardware stack levels used:    1
+  1303 ;; This function calls:
+  1304 ;;		Nothing
+  1305 ;; This function is called by:
+  1306 ;;		_main
+  1307 ;; This function uses a non-reentrant model
+  1308 ;;
+  1309                           psect	text3,local,class=CODE,delta=2,merge=1,group=0
+  1310                           	file	"leds.c"
+  1311                           	line	12
+  1312                           global __ptext3
+  1313                           __ptext3:	;psect for function _initLED
+  1314  07AD                     psect	text3
+  1315                           	file	"leds.c"
+  1316                           	line	12
+  1317                           	global	__size_of_initLED
+  1318                           	__size_of_initLED	equ	__end_of_initLED-_initLED
+  1319  0007                     	
+  1320                           _initLED:	
+  1321  07AD                     ;incstack = 0
+  1322                           	opt	stack 7
+  1323                           ; Regs used in _initLED: []
+  1324                           	line	14
+  1325                           	
+  1326                           l627:	
+  1327  07AD                     ;leds.c: 14:     PORTDbits.RD6 = 0;
+  1328                           	bcf	status, 5	;RP0=0, select bank0
+  1329  07AD  1283               	bcf	status, 6	;RP1=0, select bank0
+  1330  07AE  1303               	bcf	(8),6	;volatile
+  1331  07AF  1308               	line	15
+  1332                           ;leds.c: 15:     TRISDbits.TRISD6 = 0;
+  1333                           	bsf	status, 5	;RP0=1, select bank1
+  1334  07B0  1683               	bcf	status, 6	;RP1=0, select bank1
+  1335  07B1  1303               	bcf	(136)^080h,6	;volatile
+  1336  07B2  1308               	line	16
+  1337                           	
+  1338                           l35:	
+  1339  07B3                     	return
+  1340  07B3  0008               	opt stack 0
+  1341                           GLOBAL	__end_of_initLED
+  1342                           	__end_of_initLED:
+  1343  07B4                     	signat	_initLED,89
+  1344                           	global	_desligarLED
+  1345                           
+  1346 ;; *************** function _desligarLED *****************
+  1347 ;; Defined at:
+  1348 ;;		line 22 in file "leds.c"
+  1349 ;; Parameters:    Size  Location     Type
+  1350 ;;		None
+  1351 ;; Auto vars:     Size  Location     Type
+  1352 ;;		None
+  1353 ;; Return value:  Size  Location     Type
+  1354 ;;                  1    wreg      void 
+  1355 ;; Registers used:
+  1356 ;;		None
+  1357 ;; Tracked objects:
+  1358 ;;		On entry : 0/0
+  1359 ;;		On exit  : 0/0
+  1360 ;;		Unchanged: 0/0
+  1361 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1362 ;;      Params:         0       0       0       0       0
+  1363 ;;      Locals:         0       0       0       0       0
+  1364 ;;      Temps:          0       0       0       0       0
+  1365 ;;      Totals:         0       0       0       0       0
+  1366 ;;Total ram usage:        0 bytes
+  1367 ;; Hardware stack levels used:    1
+  1368 ;; This function calls:
+  1369 ;;		Nothing
+  1370 ;; This function is called by:
+  1371 ;;		_main
+  1372 ;; This function uses a non-reentrant model
+  1373 ;;
+  1374                           psect	text4,local,class=CODE,delta=2,merge=1,group=0
+  1375                           	line	22
+  1376                           global __ptext4
+  1377                           __ptext4:	;psect for function _desligarLED
+  1378  07A5                     psect	text4
+  1379                           	file	"leds.c"
+  1380                           	line	22
+  1381                           	global	__size_of_desligarLED
+  1382                           	__size_of_desligarLED	equ	__end_of_desligarLED-_desligarLED
+  1383  0004                     	
+  1384                           _desligarLED:	
+  1385  07A5                     ;incstack = 0
+  1386                           	opt	stack 7
+  1387                           ; Regs used in _desligarLED: []
+  1388                           	line	24
+  1389                           	
+  1390                           l641:	
+  1391  07A5                     ;leds.c: 24:     PORTDbits.RD6 = 0;
+  1392                           	bcf	status, 5	;RP0=0, select bank0
+  1393  07A5  1283               	bcf	status, 6	;RP1=0, select bank0
+  1394  07A6  1303               	bcf	(8),6	;volatile
+  1395  07A7  1308               	line	25
+  1396                           	
+  1397                           l41:	
+  1398  07A8                     	return
+  1399  07A8  0008               	opt stack 0
+  1400                           GLOBAL	__end_of_desligarLED
+  1401                           	__end_of_desligarLED:
+  1402  07A9                     	signat	_desligarLED,89
+  1403                           	global	_delay
+  1404                           
+  1405 ;; *************** function _delay *****************
+  1406 ;; Defined at:
+  1407 ;;		line 12 in file "delay.c"
+  1408 ;; Parameters:    Size  Location     Type
+  1409 ;;  t               2    0[COMMON] unsigned int 
+  1410 ;; Auto vars:     Size  Location     Type
+  1411 ;;		None
+  1412 ;; Return value:  Size  Location     Type
+  1413 ;;                  1    wreg      void 
+  1414 ;; Registers used:
+  1415 ;;		wreg, status,2, status,0
+  1416 ;; Tracked objects:
+  1417 ;;		On entry : 0/0
+  1418 ;;		On exit  : 0/0
+  1419 ;;		Unchanged: 0/0
+  1420 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1421 ;;      Params:         2       0       0       0       0
+  1422 ;;      Locals:         0       0       0       0       0
+  1423 ;;      Temps:          1       0       0       0       0
+  1424 ;;      Totals:         3       0       0       0       0
+  1425 ;;Total ram usage:        3 bytes
+  1426 ;; Hardware stack levels used:    1
+  1427 ;; This function calls:
+  1428 ;;		Nothing
+  1429 ;; This function is called by:
+  1430 ;;		_main
+  1431 ;; This function uses a non-reentrant model
+  1432 ;;
+  1433                           psect	text5,local,class=CODE,delta=2,merge=1,group=0
+  1434                           	file	"delay.c"
+  1435                           	line	12
+  1436                           global __ptext5
+  1437                           __ptext5:	;psect for function _delay
+  1438  07BB                     psect	text5
+  1439                           	file	"delay.c"
+  1440                           	line	12
+  1441                           	global	__size_of_delay
+  1442                           	__size_of_delay	equ	__end_of_delay-_delay
+  1443  0017                     	
+  1444                           _delay:	
+  1445  07BB                     ;incstack = 0
+  1446                           	opt	stack 7
+  1447                           ; Regs used in _delay: [wreg+status,2+status,0]
+  1448                           	line	14
+  1449                           	
+  1450                           l659:	
+  1451  07BB                     ;delay.c: 12: void delay(unsigned int t);delay.c: 13: {;delay.c: 14:     while( t!=0 )
+  1452                           	goto	l663
+  1453  07BB  2FCA               	
+  1454                           l26:	
+  1455  07BC                     	line	16
+  1456                           	
+  1457                           l661:	
+  1458  07BC                     ;delay.c: 15:     {;delay.c: 16:         _delay((unsigned long)((1)*(4000000/4000.0)));
 
-  1209                           	opt asmopt_push
-  1210                           opt asmopt_off
-  1211                           	movlw	199
-  1212  07C0  30C7               movwf	((??_delay+0)+0),f
-  1213  07C1  00F2               	u37:
-  1214  07C2                     	nop2
-  1215  07C2  2FC3               decfsz	(??_delay+0)+0,f
-  1216  07C3  0BF2               	goto	u37
-  1217  07C4  2FC2               	nop2
-  1218  07C5  2FC6               	nop2
-  1219  07C6  2FC7               opt asmopt_pop
-  1220                           
-  1221                           	line	18
-  1222                           ;delay.c: 18:         t--;
-  1223                           	movlw	01h
-  1224  07C7  3001               	subwf	(delay@t),f
-  1225  07C8  02F0               	movlw	0
-  1226  07C9  3000               	skipc
-  1227  07CA  1C03               	decf	(delay@t+1),f
-  1228  07CB  03F1               	subwf	(delay@t+1),f
-  1229  07CC  02F1               	goto	l639
-  1230  07CD  2FCE               	line	19
-  1231                           ;delay.c: 19:     }
-  1232                           	
-  1233                           l21:	
-  1234  07CE                     	line	14
-  1235                           	
-  1236                           l639:	
-  1237  07CE                     ;delay.c: 14:     while( t!=0 )
-  1238                           	movf	((delay@t)),w
-  1239  07CE  0870               iorwf	((delay@t+1)),w
-  1240  07CF  0471               	btfss	status,2
-  1241  07D0  1D03               	goto	u21
-  1242  07D1  2FD3               	goto	u20
-  1243  07D2  2FD4               u21:
-  1244  07D3                     	goto	l637
-  1245  07D3  2FC0               u20:
-  1246  07D4                     	goto	l24
-  1247  07D4  2FD5               	
-  1248                           l23:	
-  1249  07D5                     	line	21
-  1250                           	
-  1251                           l24:	
-  1252  07D5                     	return
-  1253  07D5  0008               	opt stack 0
-  1254                           GLOBAL	__end_of_delay
-  1255                           	__end_of_delay:
-  1256  07D6                     	signat	_delay,4217
-  1257                           global	___latbits
-  1258                           ___latbits	equ	2
-  1259  0002                     	global	btemp
-  1260                           	btemp set 07Eh
-  1261  007E                     
-  1262                           	DABS	1,126,2	;btemp
-  1263                           	global	wtemp0
-  1264                           	wtemp0 set btemp+0
-  1265  007E                     	end
+  1459                           	opt asmopt_push
+  1460                           opt asmopt_off
+  1461                           	movlw	199
+  1462  07BC  30C7               movwf	((??_delay+0)+0),f
+  1463  07BD  00F2               	u57:
+  1464  07BE                     	nop2
+  1465  07BE  2FBF               decfsz	(??_delay+0)+0,f
+  1466  07BF  0BF2               	goto	u57
+  1467  07C0  2FBE               	nop2
+  1468  07C1  2FC2               	nop2
+  1469  07C2  2FC3               opt asmopt_pop
+  1470                           
+  1471                           	line	18
+  1472                           ;delay.c: 18:         t--;
+  1473                           	movlw	01h
+  1474  07C3  3001               	subwf	(delay@t),f
+  1475  07C4  02F0               	movlw	0
+  1476  07C5  3000               	skipc
+  1477  07C6  1C03               	decf	(delay@t+1),f
+  1478  07C7  03F1               	subwf	(delay@t+1),f
+  1479  07C8  02F1               	goto	l663
+  1480  07C9  2FCA               	line	19
+  1481                           ;delay.c: 19:     }
+  1482                           	
+  1483                           l25:	
+  1484  07CA                     	line	14
+  1485                           	
+  1486                           l663:	
+  1487  07CA                     ;delay.c: 14:     while( t!=0 )
+  1488                           	movf	((delay@t)),w
+  1489  07CA  0870               iorwf	((delay@t+1)),w
+  1490  07CB  0471               	btfss	status,2
+  1491  07CC  1D03               	goto	u31
+  1492  07CD  2FCF               	goto	u30
+  1493  07CE  2FD0               u31:
+  1494  07CF                     	goto	l661
+  1495  07CF  2FBC               u30:
+  1496  07D0                     	goto	l28
+  1497  07D0  2FD1               	
+  1498                           l27:	
+  1499  07D1                     	line	21
+  1500                           	
+  1501                           l28:	
+  1502  07D1                     	return
+  1503  07D1  0008               	opt stack 0
+  1504                           GLOBAL	__end_of_delay
+  1505                           	__end_of_delay:
+  1506  07D2                     	signat	_delay,4217
+  1507                           global	___latbits
+  1508                           ___latbits	equ	2
+  1509  0002                     	global	btemp
+  1510                           	btemp set 07Eh
+  1511  007E                     
+  1512                           	DABS	1,126,2	;btemp
+  1513                           	global	wtemp0
+  1514                           	wtemp0 set btemp+0
+  1515  007E                     	end
 
 
 Data Sizes:
@@ -1373,19 +1623,22 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0     175
+ (0) _main                                                 0     0      0      99
                               _delay
                         _desligarLED
                             _initLED
+                              _lerCH
                            _ligarLED
  ---------------------------------------------------------------------------------
  (1) _ligarLED                                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _lerCH                                                0     0      0       0
  ---------------------------------------------------------------------------------
  (1) _initLED                                              0     0      0       0
  ---------------------------------------------------------------------------------
  (1) _desligarLED                                          0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _delay                                                3     1      2     175
+ (1) _delay                                                3     1      2      99
                                               0 COMMON     3     1      2
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
@@ -1397,6 +1650,7 @@ Call Graph Tables:
    _delay
    _desligarLED
    _initLED
+   _lerCH
    _ligarLED
 
  Address spaces:
@@ -1428,29 +1682,34 @@ DATA                 0      0       0      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.00 build -1524193055 
-Symbol Table                                                                                   Mon Mar 16 09:00:27 2020
+Symbol Table                                                                                   Mon Mar 16 09:50:53 2020
 
-                      l21 07CE                        l13 07DB                        l22 07C0  
-                      l14 07F8                        l23 07D5                        l31 07BE  
-                      l15 07F9                        l24 07D5                        l16 07F9  
-                      l34 07B7                        l37 07B3                        u20 07D4  
-                      u21 07D3                        u37 07C2                       l613 07B8  
-                     l623 07B0                       l615 07B4                       l641 07D6  
-                     l635 07BF                       l643 07E0                       l637 07C0  
-                     l645 07E9                       l639 07CE              __CFG_LVP$OFF 0000  
-                    _main 07D6                      btemp 007E                      start 0000  
-                   ?_main 0070             __CFG_WDTE$OFF 0000           __end_of_initLED 07BF  
-                   _delay 07BF                     status 0003                     wtemp0 007E  
-          __CFG_MCLRE$OFF 0000           __initialization 07FC              __end_of_main 07FC  
-                  ??_main 0073                    ?_delay 0070      __size_of_desligarLED 0004  
-        __end_of_ligarLED 07B8                    delay@t 0070                 ??_initLED 0070  
- __end_of__initialization 07FC            __pcstackCOMMON 0070             __end_of_delay 07D6  
-                 ??_delay 0072                __pmaintext 07D6                 ?_ligarLED 0070  
-                 __ptext1 07B4                   __ptext2 07B8                   __ptext3 07B0  
-                 __ptext4 07BF                   _initLED 07B8      end_of_initialization 07FC  
-              ??_ligarLED 0070                 _PORTDbits 0008             ??_desligarLED 0070  
-               _TRISDbits 0088       start_initialization 07FC       __end_of_desligarLED 07B4  
-__CFG_FOSC$INTRC_NOCLKOUT 0000                 ___latbits 0002         __size_of_ligarLED 0004  
-                ?_initLED 0070               _desligarLED 07B0            __size_of_delay 0017  
-        __size_of_initLED 0007                  _ligarLED 07B4             __size_of_main 0026  
+                      l20 07F9                        l15 07D8                        l16 07F1  
+                      l25 07CA                        l41 07A8                        l17 07F7  
+                      l26 07BC                        l18 07F8                        l27 07D1  
+                      l35 07B3                        l19 07F9                        l28 07D1  
+                      l54 07BA                        l38 07AC                        u30 07D0  
+                      u31 07CF                        u40 07E2                        u41 07E1  
+                      u57 07BE                       l631 07BA                       l641 07A5  
+                     l633 07A9                       l627 07AD                       l661 07BC  
+                     l629 07B4                       l663 07CA                       l671 07E7  
+                     l673 07F1                       l665 07D2                       l659 07BB  
+                     l667 07D8                       l669 07E2              __CFG_LVP$OFF 0000  
+                    _main 07D2                      btemp 007E                      start 0000  
+                   ?_main 0070             __CFG_WDTE$OFF 0000           __end_of_initLED 07B4  
+                   _delay 07BB                     _lerCH 07B4                     status 0003  
+                   wtemp0 007E            __CFG_MCLRE$OFF 0000           __initialization 07FC  
+            __end_of_main 07FC                    ??_main 0073                    ?_delay 0070  
+    __size_of_desligarLED 0004                    ?_lerCH 0070          __end_of_ligarLED 07AD  
+                  delay@t 0070                 ??_initLED 0070   __end_of__initialization 07FC  
+          __pcstackCOMMON 0070             __end_of_delay 07D2             __end_of_lerCH 07BB  
+                 ??_delay 0072                   ??_lerCH 0070                __pmaintext 07D2  
+               ?_ligarLED 0070                   __ptext1 07A9                   __ptext2 07B4  
+                 __ptext3 07AD                   __ptext4 07A5                   __ptext5 07BB  
+                 _initLED 07AD      end_of_initialization 07FC                ??_ligarLED 0070  
+               _PORTDbits 0008             ??_desligarLED 0070                 _TRISDbits 0088  
+     start_initialization 07FC       __end_of_desligarLED 07A9  __CFG_FOSC$INTRC_NOCLKOUT 0000  
+               ___latbits 0002         __size_of_ligarLED 0004                  ?_initLED 0070  
+             _desligarLED 07A5            __size_of_delay 0017            __size_of_lerCH 0007  
+        __size_of_initLED 0007                  _ligarLED 07A9             __size_of_main 002A  
             ?_desligarLED 0070  
