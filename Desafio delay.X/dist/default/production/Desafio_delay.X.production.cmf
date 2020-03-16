@@ -11,17 +11,17 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\19180037\AppData\Local\Temp\s44s.o
+$C:\Users\19180037\AppData\Local\Temp\s6cg.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 1 2
 $dist/default/production\Desafio_delay.X.production.o
 cinit CODE 0 7FC 7FC 4 2
-text1 CODE 0 7A9 7A9 4 2
-text2 CODE 0 7B4 7B4 7 2
-text3 CODE 0 7AD 7AD 7 2
-text4 CODE 0 7A5 7A5 4 2
-text5 CODE 0 7BB 7BB 17 2
-maintext CODE 0 7D2 7D2 2A 2
+text1 CODE 0 7AA 7AA 4 2
+text2 CODE 0 7B5 7B5 7 2
+text3 CODE 0 7AE 7AE 7 2
+text4 CODE 0 7A6 7A6 4 2
+text5 CODE 0 7BC 7BC 17 2
+maintext CODE 0 7D3 7D3 29 2
 cstackCOMMON COMMON 1 70 70 3 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -37,13 +37,13 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-7A4 2
+CONST 3-7A5 2
 CONST 800-1FFF 2
-ENTRY 3-7A4 2
+ENTRY 3-7A5 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-7A4 2
+CODE 3-7A5 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -52,9 +52,9 @@ SFR3 180-18F 1
 COMMON 73-7D 1
 CONFIG 2008-2008 2
 EEDATA 2100-21FF 2
-STRCODE 3-7A4 2
+STRCODE 3-7A5 2
 STRCODE 800-1FFF 2
-STRING 3-7A4 2
+STRING 3-7A5 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -70,43 +70,41 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Desafio_delay.X.production.o
-7FC cinit CODE >891:C:\Users\19180037\AppData\Local\Temp\s44s.
-7FC cinit CODE >894:C:\Users\19180037\AppData\Local\Temp\s44s.
-7FC cinit CODE >900:C:\Users\19180037\AppData\Local\Temp\s44s.
-7FC cinit CODE >902:C:\Users\19180037\AppData\Local\Temp\s44s.
-7FD cinit CODE >903:C:\Users\19180037\AppData\Local\Temp\s44s.
-7BB text5 CODE >12:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7BB text5 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7BC text5 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7C3 text5 CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7CA text5 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7CA text5 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7D1 text5 CODE >21:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
-7A5 text4 CODE >22:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7A5 text4 CODE >24:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7A8 text4 CODE >25:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7AD text3 CODE >12:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7AD text3 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7B0 text3 CODE >15:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7B3 text3 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7B4 text2 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
-7B4 text2 CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
-7BA text2 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
-7A9 text1 CODE >17:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7A9 text1 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7AC text1 CODE >20:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
-7D2 maintext CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7D2 maintext CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7D8 maintext CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7D8 maintext CODE >20:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7E2 maintext CODE >22:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7E7 maintext CODE >23:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F0 maintext CODE >24:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F1 maintext CODE >26:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F1 maintext CODE >28:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F7 maintext CODE >29:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F8 maintext CODE >30:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
-7F9 maintext CODE >32:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7FC cinit CODE >891:C:\Users\19180037\AppData\Local\Temp\s6cg.
+7FC cinit CODE >894:C:\Users\19180037\AppData\Local\Temp\s6cg.
+7FC cinit CODE >900:C:\Users\19180037\AppData\Local\Temp\s6cg.
+7FC cinit CODE >902:C:\Users\19180037\AppData\Local\Temp\s6cg.
+7FD cinit CODE >903:C:\Users\19180037\AppData\Local\Temp\s6cg.
+7BC text5 CODE >12:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7BC text5 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7BD text5 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7C4 text5 CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7CB text5 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7CB text5 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7D2 text5 CODE >21:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\delay.c
+7A6 text4 CODE >22:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7A6 text4 CODE >24:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7A9 text4 CODE >25:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7AE text3 CODE >12:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7AE text3 CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7B1 text3 CODE >15:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7B4 text3 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7B5 text2 CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
+7B5 text2 CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
+7BB text2 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\chave.c
+7AA text1 CODE >17:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7AA text1 CODE >19:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7AD text1 CODE >20:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\leds.c
+7D3 maintext CODE >14:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7D3 maintext CODE >16:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7D9 maintext CODE >18:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7D9 maintext CODE >20:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7E3 maintext CODE >22:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7E8 maintext CODE >23:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7F1 maintext CODE >24:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7F7 maintext CODE >25:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7F8 maintext CODE >27:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
+7F9 maintext CODE >29:C:\Users\19180037\MPLABXProjects\Desafio-delay\Desafio delay.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -127,19 +125,19 @@ __Hspace_3 0 0 ABS 0 - -
 delay@t 70 0 COMMON 1 cstackCOMMON dist/default/production\Desafio_delay.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\19180037\AppData\Local\Temp\s44s.o
-_main FA4 0 CODE 0 maintext dist/default/production\Desafio_delay.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\19180037\AppData\Local\Temp\s6cg.o
+_main FA6 0 CODE 0 maintext dist/default/production\Desafio_delay.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
-start 0 0 CODE 0 init C:\Users\19180037\AppData\Local\Temp\s44s.o
+start 0 0 CODE 0 init C:\Users\19180037\AppData\Local\Temp\s6cg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s44s.o
-__end_of_desligarLED F52 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\19180037\AppData\Local\Temp\s6cg.o
+__end_of_desligarLED F54 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -151,9 +149,9 @@ __size_of_lerCH 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 start_initialization FF8 0 CODE 0 cinit dist/default/production\Desafio_delay.X.production.o
 _TRISDbits 88 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
-_ligarLED F52 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
-__end_of_initLED F68 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\19180037\AppData\Local\Temp\s44s.o
+_ligarLED F54 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
+__end_of_initLED F6A 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\19180037\AppData\Local\Temp\s6cg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -162,7 +160,7 @@ __Hcinit 1000 0 CODE 0 cinit -
 __size_of_desligarLED 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
-__end_of_ligarLED F5A 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
+__end_of_ligarLED F5C 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4010 0 CONFIG 0 config -
@@ -197,13 +195,13 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\19180037\AppData\Local\Temp\s44s.o
-__pmaintext FA4 0 CODE 0 maintext dist/default/production\Desafio_delay.X.production.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\19180037\AppData\Local\Temp\s6cg.o
+__pmaintext FA6 0 CODE 0 maintext dist/default/production\Desafio_delay.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\19180037\AppData\Local\Temp\s44s.o
-stacklo 0 0 ABS 0 - C:\Users\19180037\AppData\Local\Temp\s44s.o
+stackhi 0 0 ABS 0 - C:\Users\19180037\AppData\Local\Temp\s6cg.o
+stacklo 0 0 ABS 0 - C:\Users\19180037\AppData\Local\Temp\s6cg.o
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\Desafio_delay.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -213,15 +211,15 @@ __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Desafio_delay.X.production.o
 __Hintentry 0 0 CODE 0 intentry -
-_desligarLED F4A 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
+_desligarLED F4C 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
-_initLED F5A 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
-__ptext1 F52 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
-__ptext2 F68 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
-__ptext3 F5A 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
-__ptext4 F4A 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
-__ptext5 F76 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
+_initLED F5C 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
+__ptext1 F54 0 CODE 0 text1 dist/default/production\Desafio_delay.X.production.o
+__ptext2 F6A 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
+__ptext3 F5C 0 CODE 0 text3 dist/default/production\Desafio_delay.X.production.o
+__ptext4 F4C 0 CODE 0 text4 dist/default/production\Desafio_delay.X.production.o
+__ptext5 F78 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -231,12 +229,12 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Desafio_delay.X.production.o
 __Hend_init 6 0 CODE 0 end_init -
 __end_of_main FF8 0 CODE 0 maintext dist/default/production\Desafio_delay.X.production.o
-__end_of_delay FA4 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
-__end_of_lerCH F76 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
+__end_of_delay FA6 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
+__end_of_lerCH F78 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_delay F76 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
-_lerCH F68 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
+_delay F78 0 CODE 0 text5 dist/default/production\Desafio_delay.X.production.o
+_lerCH F6A 0 CODE 0 text2 dist/default/production\Desafio_delay.X.production.o
 __initialization FF8 0 CODE 0 cinit dist/default/production\Desafio_delay.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -264,12 +262,12 @@ __initialization FF8 0 CODE 0 cinit dist/default/production\Desafio_delay.X.prod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7FC FF8 4 2
-text1 0 7A9 F52 4 2
-text2 0 7B4 F68 7 2
-text3 0 7AD F5A 7 2
-text4 0 7A5 F4A 4 2
-text5 0 7BB F76 17 2
-maintext 0 7D2 FA4 2A 2
+text1 0 7AA F54 4 2
+text2 0 7B5 F6A 7 2
+text3 0 7AE F5C 7 2
+text4 0 7A6 F4C 4 2
+text5 0 7BC F78 17 2
+maintext 0 7D3 FA6 29 2
 cstackCOMMON 1 70 70 3 1
 reset_vec 0 0 0 3 2
 config 0 2007 400E 1 2

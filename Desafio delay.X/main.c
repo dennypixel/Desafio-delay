@@ -21,12 +21,9 @@ int main(void)
         {
             ligarLED();
             delay(15000);
+            desligarLED();
         }
         
-        else
-        {
-        desligarLED();
-        }
     }   
        
 }
